@@ -14,7 +14,7 @@ int enb = 6;
 int mder1 = 9;
 int mder2 = 10;
 
-int vel = 180;
+int vel = 70;
 
 void setup() {
   Serial.begin(9600);
@@ -72,24 +72,24 @@ void loop() {
 // función ADELANTE(int vel)
 void ADELANTE(int vel) {
    //Direccion motor A
-   digitalWrite (mizq1, HIGH);
-   digitalWrite (mizq2, LOW);
-   analogWrite (ena, vel); //Velocidad motor A
-   //Direccion motor B
-   digitalWrite (mder1, HIGH);
-   digitalWrite (mder2, LOW);
-   analogWrite (enb, vel); //Velocidad motor B
-}
-
-// función ATRAS(int vel)
-void ATRAS(int vel){
-   //Direccion motor A
    digitalWrite (mizq1, LOW);
    digitalWrite (mizq2, HIGH);
    analogWrite (ena, vel); //Velocidad motor A
    //Direccion motor B
    digitalWrite (mder1, LOW);
    digitalWrite (mder2, HIGH);
+   analogWrite (enb, vel); //Velocidad motor B
+}
+
+// función ATRAS(int vel)
+void ATRAS(int vel){
+   //Direccion motor A
+   digitalWrite (mizq1, HIGH);
+   digitalWrite (mizq2, LOW);
+   analogWrite (ena, vel); //Velocidad motor A
+   //Direccion motor B
+   digitalWrite (mder1, HIGH);
+   digitalWrite (mder2, LOW);
    analogWrite (enb, vel); //Velocidad motor B
 }
 
@@ -100,16 +100,16 @@ void DERECHA(int vel){
    digitalWrite (mizq2, HIGH);
    analogWrite (ena, vel); //Velocidad motor A
    //Direccion motor B
-   digitalWrite (mder1, LOW);
-   digitalWrite (mder2, HIGH);
+   digitalWrite (mder1, HIGH);
+   digitalWrite (mder2, LOW);
    analogWrite (enb, vel); //Velocidad motor B
 }
 
 // función IZQUIERDA(int vel)
 void IZQUIERDA(int vel){
    //Direccion motor A
-   digitalWrite (mizq1, LOW);
-   digitalWrite (mizq2, HIGH);
+   digitalWrite (mizq1, HIGH);
+   digitalWrite (mizq2, LOW);
    analogWrite (ena, vel); //Velocidad motor A
    //Direccion motor B
    digitalWrite (mder1, LOW);
